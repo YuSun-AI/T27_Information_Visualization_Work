@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Combined Chart</title>
+    <!-- Include D3.js library -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!-- SVG container for the combined chart -->
+    <svg class="combined-chart"></svg>
+
+    <!-- Include your external JS file -->
+    <script src="script.js"></script>
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .combined-chart {
+            padding: 10px;
+            width: auto;
+            height: 700px;
+        }
+
+        .player-name {
+            font-size: 12px;
+            text-anchor: end;
+            fill: black;
+        }
+
+        .flag-icon {
+            width: 30px;
+            height: 22.5px;
+        }
+
+        .total-goals-text {
+            font-size: 12px;
+            text-anchor: middle;
+            fill: black;
+        }
+
+        /* Add any additional styles you need */
+
+        /* Add styles for the legend */
+        .legend {
+            font-size: 12px;
+            fill: black;
+        }
+
+        .games-played-block {
+            font-size: 12px;
+            fill: black;
+        }
+    </style>
+</body>
+</html>
