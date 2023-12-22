@@ -56,7 +56,7 @@ The above steps makes cognitive theory improve the visual effectiveness of this 
 
 We copied the original visualization using D3.js, and the result ais as follow:
 
-<img src="./Replication.png"/>
+<img src="Image/Replication.png"/>
 
 <center>Figure2</center>
 
@@ -113,7 +113,7 @@ There are some problems in the original graph, such as the improper use of the l
 
 Finally, our improvement is as follow:
 
-<img src="./Optimization.png"/>
+<img src="Image/Optimization.png"/>
 
 <center>Figure3</center>
 
@@ -125,13 +125,13 @@ In addition to the above visualization, we have also improved another visualizat
 
 The visualization shows a story of weight loss in a dog. At first glance, it seems that a dog's weight and neck size are perfectly correlated. But in reality this is a __pseudo-correlated__ visualization that pretends to exist by manipulating the axes.
 
-<img src="./dog.png" width="360" height="320" />
+<img src="Image/dog.png" width="360" height="320" />
 
 <center>Figure4</center>
 
 Our reproduction of the visualization is as follows:
 
-<img src="./Replication2.png" width="360" height="300" />
+<img src="Image/Replication2.png" width="360" height="300" />
 
 <center>Figure5</center>
 
@@ -141,7 +141,7 @@ In the redesigned chart, we added dots to the line chart and changed the backgro
 
 Our improvement to this visualization is as follows:
 
-<img src="./Optimization2.png" width="360" height="300" />
+<img src="Image/Optimization2.png" width="360" height="300" />
 
 <center>Figure6</center>
 
