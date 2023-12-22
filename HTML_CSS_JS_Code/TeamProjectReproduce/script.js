@@ -36,6 +36,7 @@ var svg = d3.select(".combined-chart")
     .attr("width", svgWidth)
     .attr("height", height);
 
+// Calculate goal ratios for each player
 players.forEach(function(player) {
     player.goalRatio = player.totalGoals / player.totalGames;
 });
@@ -49,11 +50,13 @@ var avgGoalsScale = d3.scaleLinear()
     .domain([0, d3.max(players, function(d) { return d.totalGoals / d.totalGames; })])
     .range([0, height]);
 
+// Define a line generator for the average goals line
 var line = d3.line()
     .x(function(d, i) { return 70 + i * (barWidth + padding) + barWidth / 2; })
     .y(function(d) { return 25 + height - avgGoalsScale(d.totalGoals / d.totalGames); });
 
-var legend = svg.append("g")
+// Add a legend group to the SVG
+var legend = svg.append("g") // The 'g' element is a container used to group other graphical elements
     .attr("transform", "translate(" + (svgWidth - 50) + "," + 10 + ")"); // Adjust the position of the legend
 
 // Add a block for "Games played"
@@ -72,6 +75,7 @@ svg.selectAll(".bar")
     .attr("height", function(d) { return 60 + height - yScale(d.totalGoals); })
     .style("fill", "#f0d490");
 
+// Add text for total goals on top of each bar
 svg.selectAll(".bar-value")
     .data(players)
     .enter().append("text")
@@ -102,6 +106,9 @@ svg.selectAll(".player-name")
     .attr("transform", function(d, i) {
         return "rotate(-90 " + (70 + i * (barWidth + padding) + barWidth / 2) + "," + (height + 100) + ")";
     })
+    // Apply rotation transformation to the text element
+    // The rotation is set to -90 degrees, making the text vertical
+    // The rotation is centered at the specified coordinates: (70 + i * (barWidth + padding) + barWidth / 2, height + 100)
     .text(function(d) { return d.name; });
 
 // Add flag icons
@@ -110,6 +117,8 @@ svg.selectAll(".flag-icon")
     .enter().append("image")
     .attr("class", "flag-icon")
     .attr("xlink:href", function(d) { return d.flagIcon; })
+    // Set the 'xlink:href' attribute for the image element
+    // It specifies the location of the image file to be used as the flag icon
     .attr("x", function(d, i) { return 70 + i * (barWidth + padding) + (barWidth - 20) / 2; })
     .attr("y", height + 250)
     .attr("width", 20)
@@ -164,7 +173,8 @@ svg.selectAll(".avg-goals-text")
     .attr("class", "avg-goals-text")
     .attr("x", function(d, i) { return 70 + i * (barWidth + padding) + barWidth / 2; })
     .attr("y", function(d) {
-        // Set a threshold for the condition
+        // Set a threshold value to determine the condition for adjusting the position of average goals text
+        // The threshold is a human-defined value and can be flexibly adjusted based on visualization preferences
         var threshold = 1.2;
 
         // Use the threshold in the condition
@@ -189,8 +199,6 @@ svg.selectAll(".total-goals-text")
 
 // Add the first line of text
 gamesPlayedBlock.append("text")
-    // .attr("x", 0)
-    // .attr("y", 0)
     .attr("class", "games-played-line1")
     .text("Games")
     .attr("dy", "1em") // Adjust as needed
