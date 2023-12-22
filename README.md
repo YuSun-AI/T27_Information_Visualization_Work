@@ -2,17 +2,23 @@
 
 ## Team 27:
 
-+ Name: Zixian Yue(岳子贤) , Student ID: 320210941240
-+ Name: Yu Sun(孙雨) , Student ID: 320210941201
-+ Name: Mingze Kong(孔铭泽) , Student ID: 320210941171
-+ Name: Yihan Qi(亓一涵) , Student ID: 320210940970
++ Name: Zixian Yue (岳子贤) , Student ID: 320210941240
++ Name: Yu Sun (孙雨) , Student ID: 320210941201
++ Name: Mingze Kong (孔铭泽) , Student ID: 320210941171
++ Name: Yihan Qi (亓一涵) , Student ID: 320210940970
 
-## 1. Selection and Introduction
+## Abstract
+In this article, we found a statistical chart named "bar-line-chart-showing players with the most goals-scored in World Cup", and carried out a series of analysis and improvement on this chart.
+
+We have given the __background__, __story__ and __context__ behind the chart, how a player's performance in a World Cup can be represented by recording the relevant data. Then, we analyzed how cognitive theory can make the chart more effective, including avoiding __Stroop effect__, __cognitive load__, __cognitive tunnel__. After using __JavaScript__ to copy the original chart, we put forward some improvements to solve the problems , including changing the number of plays to bubble chart, changing the line chart to bar chart, removing useless information, adding titles, etc. These improvements are beneficial to increase the __graphical integrity__ , improve the __proceduralization__ and __data-ink ratio__, avoid __cognitive tunnel__, reduce __cognitive load__ and make the graph a __data-driven__ graph. Finally, we take an additional line chart of dog's weight vs. neck size and refine it.
+
+
+## 1. Action
 
 The visualization we choose is a bar-line chart, which shows players with the most goals scored in World Cup Match. The source of the picture is [here](https://cn.bing.com/images/search?view=detailV2&ccid=2LwtS7DS&id=85843CD16857815F105AB94F4A5E13A13A979EAE&thid=OIP.2LwtS7DSgipsqU24KAWLpQHaFN&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.d8bc2d4bb0d2822a6ca94db828058ba5%3frik%3drp6XOqETXkpPuQ%26riu%3dhttp%253a%252f%252fwww.aploris.com%252fblog%252fcharts%252fwp-content%252fuploads%252fsites%252f2%252f20180622-most-goals-scored-in-world-cups-1-768x541.png%26ehk%3d4UWRU7SQgBSMUrA0JQzvPHZfTUtEqZd9%252bRAdOvHHbXA%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=541&expw=768&q=national+football+team+bar+charts&simid=608050864439386305&FORM=IRPRST&ck=A5B0032C2D0A06BB26DCF70A98809762&selectedIndex=0&itb=0&ajaxhist=0&ajaxserp=0).
 <img src="Image/Bar-line chart showing players with the most goals scored in World Cup Match.png"/>
 
-<center>Figure1</center>
+<center>Figure1 Original Chart: bar-line-chart-showing players with the most goals-scored in World Cup</center>
 
 We chose this visualization not only because we thought it could be improved, but because we thought it was a good visualization. This chart contains a wealth of information about the World Cup. It clearly shows the total number of goals scored by each player, as well as providing information about their nationality and number of matches played. This visualization makes the data more intuitive through a combination of bar charts, line charts, and flag ICONS. The bar chart shows how different players compare to each other, while the line chart shows their goals per game, further highlighting their level of performance.
 
@@ -54,11 +60,11 @@ The above steps makes cognitive theory improve the visual effectiveness of this 
 
 ## 3. Replication
 
-We copied the original visualization using D3.js, and the result ais as follow:
+We copied the original visualization using D3.js, and the result ais as follows:
 
 <img src="Image/Replication.png"/>
 
-<center>Figure2</center>
+<center>Figure2 Replication of Chart</center>
 
 ## 4. Suggestion and Improvement
 
@@ -68,54 +74,54 @@ There are some problems in the original graph, such as the improper use of the l
 
   Explanation:
 
-  1.Reduce __cognitive load__. If the reader tries to memorize the number of players played by the numbers, it will slow down the reading speed and make the information more likely to be forgotten. It's more intuitive if it's presented as a bubble plot.
+  (1).Reduce __cognitive load__. If the reader tries to memorize the number of players played by the numbers, it will slow down the reading speed and make the information more likely to be forgotten. It's more intuitive if it's presented as a bubble plot.
 
-  2.Improve __proceduralization__. The size of the bubble emphasizes how much of the game is split between different players, and our __procedural knowledge__ can quickly identify it.
+  (2).Improve __proceduralization__. The size of the bubble emphasizes how much of the game is split between different players, and our __procedural knowledge__ can quickly identify it.
 
-  3.Improve __graphical integrity__. The number representation should be proportional to the number of digits, and the bubble size should reflect the average number of appearances. We wanted to emphasize the players' average points per game, so we used a bright red color and shape size to stand out.
+  (3).Improve __graphical integrity__. The number representation should be proportional to the number of digits, and the bubble size should reflect the average number of appearances. We wanted to emphasize the players' average points per game, so we used a bright red color and shape size to stand out.
 + Change the average score of each run from the line chart to the bar chart.
 
   Explanation:
 
-  1.Avoid the interference of __procedural knowledge__. Line plots are used to represent trends, but in this case, the horizontal coordinates are the names of the players, not continuous variables (such as time), so using a line plot to represent game averages would be inconsistent with the reader's knowledge of the program.
+  (1).Avoid the interference of __procedural knowledge__. Line plots are used to represent trends, but in this case, the horizontal coordinates are the names of the players, not continuous variables (such as time), so using a line plot to represent game averages would be inconsistent with the reader's knowledge of the program.
 
 + Remove the number of players played at the bottom
   Explanation:
 
-  1.reduce __chartjunk__.After visualizing the number of plays in the form of bubble charts, these data become redundant data, which increases the reading difficulty of the reader.
+  (1).reduce __chartjunk__.After visualizing the number of plays in the form of bubble charts, these data become redundant data, which increases the reading difficulty of the reader.
 
-  2.Imporve __data-ink ratio__
+  (2).Imporve __data-ink ratio__
   After removing the redundant data ink, the proportion of effective data is increased, which makes the graoh more simple and clear, and improves the readability.
 
 + Label the data instead of using the Y-axis.
 
    Explanation:
 
-   1.Imporve __data-ink ratio__. Not using the Y-axis can reduce excess ink and improve the effective information ratio.
+   (1).Imporve __data-ink ratio__. Not using the Y-axis can reduce excess ink and improve the effective information ratio.
 
-   2.Avoid __cognitive tunnelling__. Using tags to mark the data in a histogram allows the reader to avoid searching for values in the graph, avoiding neglecting other information.
+   (2).Avoid __cognitive tunnelling__. Using tags to mark the data in a histogram allows the reader to avoid searching for values in the graph, avoiding neglecting other information.
 
-   3.Promote __graphical integrity__. Use clear labels to indicate data and avoid image distortion.
+   (3).Promote __graphical integrity__. Use clear labels to indicate data and avoid image distortion.
 
 + Adding chart titles.
 
   Explanation:
 
-  1.Promote __graphical integrity__.The title indicates that our chart wants to represent how the players performed in the World Cup.
+  (1).Promote __graphical integrity__.The title indicates that our chart wants to represent how the players performed in the World Cup.
 
-  2.Describe __context__. The title describes the background of the image and our work.
+  (2).Describe __context__. The title describes the background of the image and our work.
 
 + Add dashed lines for the background of graph.
 
   Explanation:
 
-  1.Reduce __cognitive load__. Adding dashed lines allows the reader to quickly find the player corresponding to the average score of the game.
+  (1).Reduce __cognitive load__. Adding dashed lines allows the reader to quickly find the player corresponding to the average score of the game.
 
 Finally, our improvement is as follow:
 
 <img src="Image/Optimization.png"/>
 
-<center>Figure3</center>
+<center>Figure3 Optimized Chart</center>
 
 In summary, __revising and editing__ to graph promote __critical thinking__ and getting __feedback__, and more feedback allows the image to avoid more problems, thus improving the quality of the visualization.
 
@@ -127,13 +133,13 @@ The visualization shows a story of weight loss in a dog. At first glance, it see
 
 <img src="Image/dog.png" width="360" height="320" />
 
-<center>Figure4</center>
+<center>Figure4 Original Chart: Weight and neck size over years</center>
 
 Our reproduction of the visualization is as follows:
 
 <img src="Image/Replication2.png" width="360" height="300" />
 
-<center>Figure5</center>
+<center>Figure5 Replication of Chart</center>
 
 In the original chart, both axes were three units across (21 to 18 on the left; 45 to 42) on the right. In percentage terms, the proportion on the left dropped by 14% and the right by 7%.
 
@@ -143,9 +149,11 @@ Our improvement to this visualization is as follows:
 
 <img src="Image/Optimization2.png" width="360" height="300" />
 
-<center>Figure6</center>
+<center>Figure6 Optimized Chart</center>
 
-We posted our visualizations on X and [Github](https://github.com/YuSun-AI/T27_Information_Visualization_Work), hoping to communicate with people who are interested.
+We posted our visualizations on [Github](https://github.com/YuSun-AI/T27_Information_Visualization_Work), hoping to communicate with people who are interested.
+
+Web Address: https://github.com/YuSun-AI/T27_Information_Visualization_Work
 
 ## 6. Conclusion
 
