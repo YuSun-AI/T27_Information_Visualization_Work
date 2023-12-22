@@ -10,7 +10,7 @@
 ## 1. Selection and Introduction
 
 The visualization we choose is a bar-line chart, which shows players with the most goals scored in World Cup Match. The source of the picture is [here](https://cn.bing.com/images/search?view=detailV2&ccid=2LwtS7DS&id=85843CD16857815F105AB94F4A5E13A13A979EAE&thid=OIP.2LwtS7DSgipsqU24KAWLpQHaFN&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.d8bc2d4bb0d2822a6ca94db828058ba5%3frik%3drp6XOqETXkpPuQ%26riu%3dhttp%253a%252f%252fwww.aploris.com%252fblog%252fcharts%252fwp-content%252fuploads%252fsites%252f2%252f20180622-most-goals-scored-in-world-cups-1-768x541.png%26ehk%3d4UWRU7SQgBSMUrA0JQzvPHZfTUtEqZd9%252bRAdOvHHbXA%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=541&expw=768&q=national+football+team+bar+charts&simid=608050864439386305&FORM=IRPRST&ck=A5B0032C2D0A06BB26DCF70A98809762&selectedIndex=0&itb=0&ajaxhist=0&ajaxserp=0).
-<img src="./Bar-line chart showing players with the most goals scored in World Cup Match.png"/>
+<img src="Image/Bar-line chart showing players with the most goals scored in World Cup Match.png"/>
 
 <center>Figure1</center>
 
