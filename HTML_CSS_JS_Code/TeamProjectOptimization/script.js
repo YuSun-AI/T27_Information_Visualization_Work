@@ -1,4 +1,3 @@
-
 // Data for the combined chart (22 players)
 var players = [
     { name: 'Miroslav Klose', totalGames: 24, totalGoals: 16, avgGoals: 0.7, flagIcon: 'German.svg' },
@@ -67,6 +66,7 @@ svg.selectAll(".bar")
     .attr("height", function(d) { return 60 + height - yScale(d.totalGoals); })
     .style("fill", "#f0d490");
 
+// Add text for total goals on top of each bar
 svg.selectAll(".bar-value")
     .data(players)
     .enter().append("text")
@@ -89,6 +89,7 @@ svg.selectAll(".avg-goals-bar")
     .attr("height", function(d) { return 60 + height - avgGoalsScale(d.totalGoals / d.totalGames); })  // Use avgGoalsScale here
     .style("fill", "#1f77b4");
 
+// Add text for avggoals on top of each bar
 svg.selectAll(".avg-goals-value")
     .data(players)
     .enter().append("text")
@@ -130,6 +131,9 @@ svg.selectAll(".player-name")
     .attr("transform", function(d, i) {
         return "rotate(-90 " + (70 + i * (barWidth + padding) + barWidth / 2) + "," + (height + 210) + ")";
     })
+    // Apply rotation transformation to the text element
+    // The rotation is set to -90 degrees, making the text vertical
+    // The rotation is centered at the specified coordinates: (70 + i * (barWidth + padding) + barWidth / 2, height + 100)
     .text(function(d) { return d.name; });
 
 // Add flag icons
@@ -138,18 +142,22 @@ svg.selectAll(".flag-icon")
     .enter().append("image")
     .attr("class", "flag-icon")
     .attr("xlink:href", function(d) { return d.flagIcon; })
+    // Set the 'xlink:href' attribute for the image element
+    // It specifies the location of the image file to be used as the flag icon
     .attr("x", function(d, i) { return 70 + i * (barWidth + padding) + (barWidth - 30) / 2; })
     .attr("y", height + 360);
 
-// Add circles for average goals
+// Add bubbles for played games
 svg.selectAll(".avg-goals-circle")
     .data(players)
     .enter().append("circle")
     .attr("class", "avg-goals-circle")
     .attr("cx", function(d, i) { return 70 + i * (barWidth + padding) + barWidth / 2; })
     .attr("cy", function(d) { return 80; })
-    // .attr("r", 2)
-     .attr("r", function(d) { return d.totalGames; })
+    .attr("r", function(d) { return d.totalGames; })
+    // Set the 'r' attribute for the circle element, representing the radius
+    // The attribute value is determined by the 'totalGames' property of the data ('d') associated with the current element
+    // It determines the size of the circle based on the total number of played games
     .style("fill", "red");
 
 
@@ -184,7 +192,7 @@ legend.append("text")
     .text("Goals/game")
     .style("font-size", "12px"); // Set the font size
 
-
+// Add a circle for the bubble chart color
 legend.append("circle")
     .attr("cx", 6)
     .attr("cy", 48)  // Adjust the vertical position
@@ -207,7 +215,6 @@ svg.selectAll(".total-goals-text")
     .enter().append("text")
     .attr("class", "total-goals-text")
     .attr("x", function(d, i) { return 70 + i * (barWidth + padding) + barWidth / 2; })
-    // .attr("y", function(d) { return height + 290; })
     .attr("y", function(d) { return 85; })
     .text(function(d) { return d.totalGames; });
 
